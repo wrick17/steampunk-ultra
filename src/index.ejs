@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <div id="calc"></div>
+  </body>
+  <script>
+    var config = {
+      selector: '#calc',
+      calculatorData: {
+        title: 'Dollar money',
+        fields: {
+          date: {
+            title: "How many dollars can you put per month?",
+            type: "text",
+            value: '10/11/1991',
+          }, 
+          forward: {
+            title: "date value ",
+            type: "output",
+            formula: 'CONCATENATE("Hello ", "World")',
+          },
+          VIGSd: {
+            title: "Table (With input data)",
+            type: "table",
+            hideTitle: true,
+            data: [
+              [
+                "head",
+                "tail"
+              ],
+              [
+                "one",
+                "two"
+              ],
+              [
+                "three",
+                "four"
+              ]
+            ],
+            hide: false,
+            disabled: false
+          }
+        },
+      }
+    };
+    var calculator = new Calc(config);
+    calculator.init();
+  </script>
+</html>
